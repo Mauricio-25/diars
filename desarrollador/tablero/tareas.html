@@ -19,11 +19,11 @@
     <link rel="apple-touch-icon" href="https://dignita.tech/wp-content/uploads/2022/05/cropped-digniya-ico-180x180.png" />
 
     <!-- Estilos CSS-->
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
 
     <!-- Codigo JS -->
-    <script src="../codigo.js" defer></script>
+    <script src="../../codigo.js" defer></script>
 </head>
 <body>
     
@@ -43,20 +43,20 @@
             </div>
     
             <div class="secciones">
-                <div class="secciones__elemento">
+                <a href="../mensajes/no-leidos.html" class="secciones__elemento">
                     <i class="fa-solid fa-bell secciones__icono"></i>
                     <span>Mensajes</span>
-                </div>
+                </a>
     
                 <div class="secciones__elemento secciones__elemento-activo">
                     <i class="fa-solid fa-globe secciones__icono"></i>
                     <span>Tablero</span>
                 </div>
     
-                <div class="secciones__elemento">
+                <a href="../cuenta/perfil.html" class="secciones__elemento">
                     <i class="fa-solid fa-user secciones__icono"></i>
                     <span>Cuenta</span>
-                </div>
+                </a>
                 
             </div>
             
@@ -90,7 +90,7 @@
                         <span class="tabla__extra">25/08/2023 <i class="fa-solid fa-triangle-exclamation tabla__exclamacion"></i></span>
                         <span class="tabla__extra">En proceso</span>
                         <div class="botones">
-                            <div class="botones__boton botones__boton-redondo botones__boton-amarillo" onclick="abrirVentanaVerTarea()">
+                            <div class="botones__boton botones__boton-redondo botones__boton-amarillo" onclick="abrirVentanaEditar()">
                                 <i class="fa-solid fa-pen"></i>
                             </div>
 
@@ -105,7 +105,7 @@
                         <span class="tabla__extra">26/08/2023</span>
                         <span class="tabla__extra">En proceso</span>
                         <div class="botones">
-                            <div class="botones__boton botones__boton-redondo botones__boton-amarillo" onclick="abrirVentanaVerTarea()">
+                            <div class="botones__boton botones__boton-redondo botones__boton-amarillo" onclick="abrirVentanaEditar()">
                                 <i class="fa-solid fa-pen"></i>
                             </div>
 
@@ -120,7 +120,7 @@
                         <span class="tabla__extra">30/08/2023</span>
                         <span class="tabla__extra">Por hacer</span>
                         <div class="botones">
-                            <div class="botones__boton botones__boton-redondo botones__boton-amarillo" onclick="abrirVentanaVerTarea()">
+                            <div class="botones__boton botones__boton-redondo botones__boton-amarillo" onclick="abrirVentanaEditar()">
                                 <i class="fa-solid fa-pen"></i>
                             </div>
 
@@ -135,7 +135,7 @@
                         <span class="tabla__extra">01/09/2023</span>
                         <span class="tabla__extra">En revisión</span>
                         <div class="botones">
-                            <div class="botones__boton botones__boton-redondo botones__boton-amarillo" onclick="abrirVentanaVerTarea()">
+                            <div class="botones__boton botones__boton-redondo botones__boton-amarillo" onclick="abrirVentanaEditar()">
                                 <i class="fa-solid fa-pen"></i>
                             </div>
 
@@ -150,7 +150,7 @@
                         <span class="tabla__extra">15/08/2023</span>
                         <span class="tabla__extra">Terminado</span>
                         <div class="botones">
-                            <div class="botones__boton botones__boton-redondo botones__boton-amarillo" onclick="abrirVentanaVerTarea()">
+                            <div class="botones__boton botones__boton-redondo botones__boton-amarillo" onclick="abrirVentanaEditar()">
                                 <i class="fa-solid fa-pen"></i>
                             </div>
 
@@ -165,9 +165,9 @@
 
     </div>
 
-    <div class="mensaje mensaje-verTarea">
+    <div class="mensaje mensaje-editar">
         <div class="mensaje__contenedor">
-            <h3 class="mensaje__titulo">VER TAREA</h3>
+            <h3 class="mensaje__titulo">EDITAR TAREA</h3>
 
             <div class="mensaje__contenido">
                 <div class="mensaje__campo">
@@ -185,7 +185,7 @@
                     <input class="mensaje__input mensaje__input-disabled" type="text" disabled>
                 </div>
 
-                <div class="mensaje__campo">
+                <div class="mensaje__campo mensaje__campo-start">
                     <label for="" class="mensaje__texto">Descripción: </label>
                     <textarea name="" id="" cols="30" rows="3" class="mensaje__input mensaje__textarea mensaje__input-disabled" disabled></textarea>
                 </div>
@@ -205,7 +205,7 @@
                     </div>
                 </div>
 
-                <div class="mensaje__campo">
+                <div class="mensaje__campo mensaje__campo-start">
                     <label for="" class="mensaje__texto">Equipo: </label>
                     <div class="mensaje__combobox">
                         <div class="mensaje__input mensaje__combobox-contenedor mensaje__combobox-disabled">
@@ -247,7 +247,7 @@
                     <input type="date" name="" id="" class="mensaje__input mensaje__input-disabled" disabled>
                 </div>
 
-                <div class="mensaje__campo">
+                <div class="mensaje__campo mensaje__campo-start">
                     <label for="" class="mensaje__texto">Revisión: </label>
                     <textarea name="" id="" cols="30" rows="3" class="mensaje__input mensaje__textarea mensaje__input-disabled" disabled></textarea>
                 </div>

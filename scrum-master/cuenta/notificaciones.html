@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones | Cuenta</title>
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/745852fa0a.js" crossorigin="anonymous"></script>
+
+    <!-- Icono Navegador -->
+    <link rel="icon" href="https://dignita.tech/wp-content/uploads/2022/05/cropped-digniya-ico-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://dignita.tech/wp-content/uploads/2022/05/cropped-digniya-ico-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://dignita.tech/wp-content/uploads/2022/05/cropped-digniya-ico-180x180.png" />
+
+    <!-- Estilos CSS-->
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
+
+    <!-- Codigo JS -->
+    <script src="../../codigo.js" defer></script>
+</head>
+<body>
+    
+    <div class="body">
+        <section class="barraLateral">
+            <div class="barraLateral__fila">
+                <ul class="menu">
+        
+                    <a href="perfil.html" class="menu__elemento">
+                        <div class="menu__linea"></div>
+                        <div class="menu__contenedor">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Perfil</span>
+                        </div>
+                    </a>
+
+                    <li class="menu__elemento menu__elemento-activo">
+                        <div class="menu__linea"></div>
+                        <div class="menu__contenedor">
+                            <i class="fa-solid fa-message"></i>
+                            <span>Notificaciones</span>
+                        </div>
+                    </li>
+
+                    <a href="../../index.html" class="menu__elemento">
+                        <div class="menu__linea"></div>
+                        <div class="menu__contenedor">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <span>Cerrar sesión</span>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+    
+            <div class="secciones">
+                <a href="../mensajes/no-leidos.html" class="secciones__elemento">
+                    <i class="fa-solid fa-bell secciones__icono"></i>
+                    <span>Mensajes</span>
+                </a>
+    
+                <a href="../tablero/proyectos.html" class="secciones__elemento">
+                    <i class="fa-solid fa-globe secciones__icono"></i>
+                    <span>Tablero</span>
+                </a>
+    
+                <div class="secciones__elemento secciones__elemento-activo">
+                    <i class="fa-solid fa-user secciones__icono"></i>
+                    <span>Cuenta</span>
+                </div>
+                
+            </div>
+            
+            <button class="btnAbrirMenu"><i class="fa-solid fa-chevron-right btnAbrirMenu__icono"></i></button>
+        </section>
+    
+        <section class="main">
+            <h1 class="main__h1">NOTIFICACIONES</h1>
+    
+            <div class="notificaciones">
+                <div class="notificaciones__bloque">
+                    <h3 class="notificaciones__h3">Agregar</h3>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se le asigna a un nuevo proyecto</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se crea una nueva tarea</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se crea un nuevo requerimiento</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se crea una nueva versión</span>
+                    </div>
+                </div>
+
+                <div class="notificaciones__bloque">
+                    <h3 class="notificaciones__h3">Editar</h3>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se modifica un proyecto</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se modifica una tarea</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se modifica un requerimiento</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se modifica una versión</span>
+                    </div>
+                </div>
+
+                <div class="notificaciones__bloque">
+                    <h3 class="notificaciones__h3">Eliminar</h3>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se cancela un proyecto</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se termina un proyecto</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se elimina una tarea</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se termina una tarea</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se elimina un requerimiento</span>
+                    </div>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando se cumplió un requerimiento</span>
+                    </div>
+                </div>
+
+                <div class="notificaciones__bloque">
+                    <h3 class="notificaciones__h3">Revisión</h3>
+                    <div class="notificaciones__elemento">
+                        <input type="checkbox" class="notificaciones__checkbox">
+                        <span>Notificar cuando una tarea necesita revisión</span>
+                    </div>
+                </div>
+
+                <div class="notificaciones__boton">
+                    <button class="btnNuevo btnNuevo-notificaciones">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        <span>Guardar cambios</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

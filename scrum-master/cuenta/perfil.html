@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | Cuenta</title>
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/745852fa0a.js" crossorigin="anonymous"></script>
+
+    <!-- Icono Navegador -->
+    <link rel="icon" href="https://dignita.tech/wp-content/uploads/2022/05/cropped-digniya-ico-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://dignita.tech/wp-content/uploads/2022/05/cropped-digniya-ico-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://dignita.tech/wp-content/uploads/2022/05/cropped-digniya-ico-180x180.png" />
+
+    <!-- Estilos CSS-->
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/estilos.css">
+
+    <!-- Codigo JS -->
+    <script src="../../codigo.js" defer></script>
+</head>
+<body>
+    
+    <div class="body">
+        <section class="barraLateral">
+            <div class="barraLateral__fila">
+                <ul class="menu">
+        
+                    <li class="menu__elemento menu__elemento-activo">
+                        <div class="menu__linea"></div>
+                        <div class="menu__contenedor">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Perfil</span>
+                        </div>
+                    </li>
+
+                    <a href="notificaciones.html" class="menu__elemento">
+                        <div class="menu__linea"></div>
+                        <div class="menu__contenedor">
+                            <i class="fa-solid fa-message"></i>
+                            <span>Notificaciones</span>
+                        </div>
+                    </a>
+
+                    <a href="../../index.html" class="menu__elemento">
+                        <div class="menu__linea"></div>
+                        <div class="menu__contenedor">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <span>Cerrar sesión</span>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+    
+            <div class="secciones">
+                <a href="../mensajes/no-leidos.html" class="secciones__elemento">
+                    <i class="fa-solid fa-bell secciones__icono"></i>
+                    <span>Mensajes</span>
+                </a>
+    
+                <a href="../tablero/proyectos.html" class="secciones__elemento">
+                    <i class="fa-solid fa-globe secciones__icono"></i>
+                    <span>Tablero</span>
+                </a>
+    
+                <div class="secciones__elemento secciones__elemento-activo">
+                    <i class="fa-solid fa-user secciones__icono"></i>
+                    <span>Cuenta</span>
+                </div>
+                
+            </div>
+            
+            <button class="btnAbrirMenu"><i class="fa-solid fa-chevron-right btnAbrirMenu__icono"></i></button>
+        </section>
+    
+        <section class="main">
+            <h1 class="main__h1">PERFIL</h1>
+    
+            <div class="datos">
+                <div class="datos__contenido">
+                    <div class="mensaje__contenido datos__col1">
+                        <div class="mensaje__campo">
+                            <span>DNI</span>
+                            <input class="mensaje__input mensaje__input-disabled" type="text" disabled>
+                        </div>
+
+                        <div class="mensaje__campo">
+                            <span>Nombre</span>
+                            <input class="mensaje__input mensaje__input-disabled" type="text" disabled>
+                        </div>
+
+                        <div class="mensaje__campo">
+                            <span>Correo</span>
+                            <input class="mensaje__input" type="text">
+                        </div>
+
+                        <div class="mensaje__campo">
+                            <label for="" class="mensaje__texto">Tipo: </label>
+                            <div class="mensaje__combobox">
+                                <div class="mensaje__input mensaje__combobox-contenedor mensaje__combobox-disabled">
+                                    <input type="text" class="mensaje__combobox-input" value="Scrum Master" readonly>
+                                    <i class="fa-solid fa-chevron-down mensaje__combobox-flecha"></i>
+                                </div>
+                                <div class="mensaje__combobox-opciones">
+                                    <div class="mensaje__combobox-opcion">Desarrollador</div>
+                                    <div class="mensaje__combobox-opcion">Scrum Master</div>
+                                    <div class="mensaje__combobox-opcion">Ventas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="mensaje__contenido datos__col2">
+                        <div class="mensaje__campo">
+                            <span>Teléfono</span>
+                            <input class="mensaje__input" type="text">
+                        </div>
+        
+                        <div class="mensaje__campo">
+                            <span>Dirección</span>
+                            <input class="mensaje__input" type="text">
+                        </div>
+        
+                        <div class="mensaje__campo">
+                            <span>Sexo</span>
+                            <div class="mensaje__contenedorRadio">
+                                <div>
+                                    <input type="radio" name="sexo" id="hombre">
+                                    <label for="hombre">Hombre</label>
+                                </div>
+    
+                                <div class="mensaje__contenedorRadio-col2">
+                                    <input type="radio" name="sexo" id="mujer">
+                                    <label for="mujer">Mujer</label>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="mensaje__campo">
+                            <span>GitHub</span>
+                            <input class="mensaje__input" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="datos__boton">
+                    <button class="btnNuevo">
+                        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+                        <span>Guardar cambios</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    
+</body>
+</html>

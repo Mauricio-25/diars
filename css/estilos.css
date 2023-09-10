@@ -33,6 +33,7 @@ body {
     font-size: var(--parrafo);
     color: var(--blanco);
     font-weight: 400;
+    height: 100vh;
 }
 
 .body {
@@ -290,6 +291,7 @@ a {
     .barraLateral {
         transform: translateX(-100%);
         position: absolute;
+        z-index: 3;
     }
     .btnAbrirMenu {
         display: block;
@@ -302,10 +304,6 @@ a {
     }
     .barraLateral:hover .btnAbrirMenu__icono {
         transform: rotate(180deg);
-    }
-
-    body {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -327,6 +325,8 @@ a {
 
 .main {
     padding: 35px 50px;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .main__h1 {
@@ -377,7 +377,7 @@ a {
     font-weight: 600;
 }
 
-.buscar__boton:hover, .btnNuevo:hover, .login__boton:hover  {
+.buscar__boton:hover, .btnNuevo:hover, .login__boton:hover, .mensaje__aceptar:hover  {
     background-color: #ff6537;
 }
 
@@ -410,12 +410,36 @@ a {
     font-weight: 700;
     background-color: var(--gris);
     font-size: var(--subtitulo_pequeño);
+    display: grid;
+    gap: 15px;
 }
 
 .tabla__header-tareas {
-    display: grid;
     grid-template-columns: 3fr 1fr 1fr 80px;
-    gap: 15px;
+}
+
+.tabla__header-mensajes {
+    grid-template-columns: 1fr 3fr clamp(250px, 34.194vw, 280px);
+}
+
+.tabla__header-buzon {
+    grid-template-columns: 1fr 3fr clamp(185px, 24.839vw, 200px);
+}
+
+.tabla__header-version {
+    grid-template-columns: 1fr 3fr clamp(66px, 7.484vw, 50px);
+}
+
+.tabla__header-proyectos {
+    grid-template-columns: 2fr repeat(3, 1fr) clamp(200px, 27.032vw, 219px);
+}
+
+.tabla__header-tareasScrum {
+    grid-template-columns: 3fr repeat(3, 1fr) clamp(66px, 9.419vw, 80px);
+}
+
+.tabla__header-requerimiento {
+    grid-template-columns: 1fr 3fr clamp(104px, 14.774vw, 125px);
 }
 
 
@@ -438,11 +462,26 @@ a {
     grid-template-columns: 3fr 1fr 1fr auto;
 }
 
+.tabla__fila-mensajes {
+    grid-template-columns: 1fr 3fr auto;
+}
+
+.tabla__fila-version {
+    grid-template-columns: 1fr 3fr auto;
+}
+
+.tabla__fila-proyectos {
+    grid-template-columns: 2fr repeat(3, 1fr) auto;
+}
+
+.tabla__fila-tareasScrum {
+    grid-template-columns: 3fr repeat(3, 1fr) auto;
+}
+
+
 /**/
 .tabla__fila:hover {
     background-color: var(--plomo);
-}
-.tabla__fila:hover span {
     font-weight: 600;
 }
 
@@ -535,6 +574,14 @@ a {
     background-color: #3ab900;
 }
 
+.botones__boton-rojo {
+    background-color: #D43100;
+}
+
+.botones__boton-rojo:hover {
+    background-color: #e93600;
+}
+
 /**/
 .tabla__fila:hover .botones {
     opacity: 1;
@@ -600,6 +647,10 @@ a {
     padding: 30px 30px;
 }
 
+.mensaje-eliminar .mensaje__contenedor {
+    max-width: 500px;
+}
+
 /* */
 
 .mensaje__contenido {
@@ -618,6 +669,13 @@ a {
     align-items: center;
 }
 
+.mensaje__campo-start {
+    align-items: start;
+}
+.mensaje__campo-start .mensaje__texto {
+    padding-top: 8px;
+}
+
 .mensaje__texto {
     font-weight: 600;
 }
@@ -627,6 +685,7 @@ a {
     border-radius: 8px;
     background-color: var(--gris);
     padding: 8px 12px;
+    width: 100%;
 }
 
 .mensaje__input-disabled {
@@ -639,6 +698,10 @@ a {
 
 .mensaje__textarea {
     resize: none;
+}
+
+.mensaje__input-radio {
+    accent-color: var(--anaranjado);
 }
 
 /**/
@@ -722,6 +785,8 @@ a {
 .mensaje__combobox-opcion {
     padding: 8px 12px;
     cursor: default;
+    display: inline-block;
+    width: 100%;
 }
 
 .mensaje__combobox-opcion:hover {
@@ -736,6 +801,10 @@ a {
     .mensaje__campo {
         grid-template-columns: 1fr;
         gap: 15px;
+    }
+
+    .mensaje__campo-start .mensaje__texto {
+        padding-top: 0px;
     }
 }
 
@@ -770,4 +839,161 @@ a {
 
 .barraLateral__combobox .mensaje__combobox-input {
     text-align: center;
+}
+
+/* */
+
+.mensaje__añadir {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    
+    transition: 0.15s;
+}
+
+.linea {
+    background-color: #9A9A9A;
+    border-radius: 10px;
+    height: 3px;
+    transition: 0.15s;
+}
+
+.mensaje__añadir:hover {
+    color: var(--anaranjado);
+}
+.mensaje__añadir:hover .linea {
+    background-color: var(--anaranjado);
+}
+
+.desarrolladores {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.desarrolladores__desarrollador {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+}
+.desarrolladores__icono {
+    background-color: var(--gris);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+.desarrolladores__icono:hover {
+    background-color: var(--anaranjado);
+}
+
+
+
+/* ! --------------------------------------------------------------------------------------------------------------------------------------------
+!                                                               SECCION DATOS PERFIL
+! --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ?  --------------------------------------------------------- VERSION PC -------------------------------------------------------------------- */
+
+.datos {
+    font-size: var(--subtitulo_pequeño);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.datos__contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.datos__boton {
+    display: flex;
+    justify-content: center;
+}
+
+.datos__col1, .datos__col2 {
+    padding: 0;
+    max-height: none;
+    margin: 0;
+}
+
+.mensaje__contenedorRadio {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 1270px) {
+    .datos__contenido {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .mensaje__contenedorRadio {
+        justify-content: space-between;
+    }
+}
+
+
+
+/* ! --------------------------------------------------------------------------------------------------------------------------------------------
+!                                                               SECCION DATOS PERFIL
+! --------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ?  --------------------------------------------------------- VERSION PC -------------------------------------------------------------------- */
+
+.notificaciones {
+    font-size: var(--subtitulo_pequeño);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.notificaciones__bloque {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notificaciones__h3 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.notificaciones__elemento {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+}
+
+.notificaciones__checkbox {
+    background-color: #838383;
+    width: 17px;
+    height: 17px;
+    border-radius: 25px;
+}
+
+.notificaciones__checkbox:checked {
+    background-color: var(--anaranjado);
+}
+
+.notificaciones__boton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width:400px) {
+    .btnNuevo-notificaciones {
+        width: 100%;
+        justify-content: center;
+    }
 }
