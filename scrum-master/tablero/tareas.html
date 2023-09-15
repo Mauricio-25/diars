@@ -246,17 +246,16 @@
                 </div>
 
                 <div class="mensaje__campo">
-                    <label for="" class="mensaje__texto">Tipo </label>
+                    <label for="" class="mensaje__texto">Etapa</label>
                     <div class="mensaje__combobox">
                         <div class="mensaje__input mensaje__combobox-contenedor" >
                             <input type="text" class="mensaje__combobox-input" placeholder="-- Selecciona --" readonly>
                             <i class="fa-solid fa-chevron-down mensaje__combobox-flecha"></i>
                         </div>
                         <div class="mensaje__combobox-opciones">
-                            <div class="mensaje__combobox-opcion">RPA</div>
-                            <div class="mensaje__combobox-opcion">IA</div>
-                            <div class="mensaje__combobox-opcion">WEB</div>
-                            <div class="mensaje__combobox-opcion">Mantenimiento</div>
+                            <div class="mensaje__combobox-opcion">Planificación</div>
+                            <div class="mensaje__combobox-opcion">Diseño</div>
+                            <div class="mensaje__combobox-opcion">Implementación</div>
                         </div>
                     </div>
                 </div>
@@ -281,8 +280,8 @@
                 <div class="mensaje__campo">
                     <label for="" class="mensaje__texto">Scrum Master</label>
                     <div class="mensaje__combobox">
-                        <div class="mensaje__input mensaje__combobox-contenedor" >
-                            <input type="text" class="mensaje__combobox-input buscador" placeholder="-- Selecciona --">
+                        <div class="mensaje__input mensaje__combobox-contenedor mensaje__combobox-disabled">
+                            <input type="text" class="mensaje__combobox-input" value="Mauricio Soto Buenaño" readonly>
                             <i class="fa-solid fa-chevron-down mensaje__combobox-flecha"></i>
                         </div>
                         <div class="mensaje__combobox-opciones">
@@ -298,9 +297,8 @@
                 <div class="mensaje__campo mensaje__campo-start">
                     <label for="" class="mensaje__texto">Desarrolladores</label>
                     <div>
-
-                        <div class="desarrolladores">
-                            <div class="desarrolladores__desarrollador">
+                        <div class="multicampos">
+                            <div class="multicampos__campo">
                                 <div class="mensaje__combobox">
                                     <div class="mensaje__input mensaje__combobox-contenedor" >
                                         <input type="text" class="mensaje__combobox-input buscador" placeholder="-- Selecciona --" name="desarrolladores[]">
@@ -313,14 +311,14 @@
                                         <div class="mensaje__combobox-opcion">Josué Edú Cordova Ypanaque</div>
                                     </div>
                                 </div>
-                                <div class="desarrolladores__icono" onclick="eliminarDesarrollador(this)">
+                                <div class="multicampos__icono" onclick="eliminarCampo(this)">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </div>
                             </div>
                             
                         </div>
 
-                        <div class="mensaje__añadir" onclick="añadirDesarrolladorBuscador(this)">
+                        <div class="mensaje__añadir" onclick="añadirCampoYBuscador(this)">
                             <div class="linea"></div>
                             <span><i class="fa-solid fa-plus"></i></span>
                             <div class="linea"></div>
@@ -384,17 +382,16 @@
                 </div>
 
                 <div class="mensaje__campo">
-                    <label for="" class="mensaje__texto">Tipo </label>
+                    <label for="" class="mensaje__texto">Etapa</label>
                     <div class="mensaje__combobox">
                         <div class="mensaje__input mensaje__combobox-contenedor" >
                             <input type="text" class="mensaje__combobox-input" placeholder="-- Selecciona --" readonly>
                             <i class="fa-solid fa-chevron-down mensaje__combobox-flecha"></i>
                         </div>
                         <div class="mensaje__combobox-opciones">
-                            <div class="mensaje__combobox-opcion">RPA</div>
-                            <div class="mensaje__combobox-opcion">IA</div>
-                            <div class="mensaje__combobox-opcion">WEB</div>
-                            <div class="mensaje__combobox-opcion">Mantenimiento</div>
+                            <div class="mensaje__combobox-opcion">Planificación</div>
+                            <div class="mensaje__combobox-opcion">Diseño</div>
+                            <div class="mensaje__combobox-opcion">Implementación</div>
                         </div>
                     </div>
                 </div>
@@ -435,7 +432,7 @@
                 <div class="mensaje__campo">
                     <label for="" class="mensaje__texto">Scrum Master</label>
                     <div class="mensaje__combobox">
-                        <div class="mensaje__input mensaje__combobox-contenedor" >
+                        <div class="mensaje__input mensaje__combobox-contenedor mensaje__combobox-disabled">
                             <input type="text" class="mensaje__combobox-input" value="Mauricio Soto Buenaño" readonly>
                             <i class="fa-solid fa-chevron-down mensaje__combobox-flecha"></i>
                         </div>
@@ -453,16 +450,27 @@
                     <label for="" class="mensaje__texto">Desarrolladores</label>
                     <div>
 
-                        <div class="desarrolladores">
-                            <div class="desarrolladores__desarrollador">
-                                <input class="mensaje__input" type="text" name="desarrolladores[]">
-                                <div class="desarrolladores__icono" onclick="eliminarDesarrollador(this)">
+                        <div class="multicampos">
+                            <div class="multicampos__campo">
+                                <div class="mensaje__combobox">
+                                    <div class="mensaje__input mensaje__combobox-contenedor" >
+                                        <input type="text" class="mensaje__combobox-input buscador" value="Carlos Santiago Guzman Vasquez" placeholder="-- Selecciona --" name="desarrolladores[]">
+                                    </div>
+                                    <div class="mensaje__combobox-opciones">
+                                        <div class="mensaje__combobox-opcion">Carlos Santiago Guzman Vasquez</div>
+                                        <div class="mensaje__combobox-opcion">Aaron Gabriel Pereda Saldaña</div>
+                                        <div class="mensaje__combobox-opcion">Pedro Nicolas Suarez Vera</div>
+                                        <div class="mensaje__combobox-opcion">Josué Edú Cordova Ypanaque</div>
+                                    </div>
+                                </div>
+                                <div class="multicampos__icono" onclick="eliminarCampo(this)">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </div>
                             </div>
+                            
                         </div>
 
-                        <div class="mensaje__añadir" onclick="añadirDesarrollador(this)">
+                        <div class="mensaje__añadir" onclick="añadirCampoYBuscador(this)">
                             <div class="linea"></div>
                             <span><i class="fa-solid fa-plus"></i></span>
                             <div class="linea"></div>

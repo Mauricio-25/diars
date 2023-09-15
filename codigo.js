@@ -1,10 +1,9 @@
 
-// ! ABRIR EL COMBOBOX
 
+// ! ABRIR EL COMBOBOX
 
 let comboBox = [];
 comboBox = document.querySelectorAll(".mensaje__combobox-contenedor");
-
 
 let opciones = [];
 opciones = document.querySelectorAll(".mensaje__combobox-opcion");
@@ -50,12 +49,16 @@ function cerrarLosComboBox() {
     document.addEventListener("mousedown", (event)=>{
         for(let i=0; i<comboBox.length; i++) {
     
-            if(!comboBox[i].contains(event.target) && !comboBox[i].nextElementSibling.contains(event.target)){
-                let opciones = comboBox[i].nextElementSibling;
-                opciones.style.display = "none";
-                setTimeout(() => {
-                    opciones.style.opacity = "0";
-                }, 100);
+            try {
+                if(!comboBox[i].contains(event.target) && !comboBox[i].nextElementSibling.contains(event.target)){
+                    let opciones = comboBox[i].nextElementSibling;
+                    opciones.style.display = "none";
+                    setTimeout(() => {
+                        opciones.style.opacity = "0";
+                    }, 100);
+                }
+            } catch (error) {
+                // 
             }
         }
     });
@@ -193,7 +196,7 @@ function añadirLosBuscadores() {
             for (i=0; i<lista.children.length; i++){
                 if(lista.children[i].innerHTML.toUpperCase().includes(texto)) {
                 lista.children[i].style.display = "inline-block";
-                encontrado = true;
+                //encontrado = true;
                 } else {
                 lista.children[i].style.display = "none";
                 }
@@ -215,63 +218,73 @@ añadirLosBuscadores();
 
 // ! ELIMINAR DESARROLLADOR
 
-function eliminarDesarrollador(boton) {
-    const desarrolladores = boton.parentNode.parentNode;
+function eliminarCampo(boton) {
+    let multicampos = boton.parentNode.parentNode;
 
-    if (desarrolladores.childElementCount > 1) {
-        const desarrollador = boton.parentNode;
+    if (multicampos.childElementCount > 1) {
+        let campo = boton.parentNode;
 
-        desarrolladores.removeChild(desarrollador);
+        multicampos.removeChild(campo);
     }
 }
 
 // ! AGREGAR DESARROLLADOR
 
-function añadirDesarrollador(boton) {
-    const desarrolladores = boton.previousElementSibling;
+function añadirCampo(boton) {
+    let multicampos = boton.previousElementSibling;
 
-    const desarrollador = `
-        <div class="desarrolladores__desarrollador">
-            <input class="mensaje__input" type="text" name="desarrolladores[]">
-            <div class="desarrolladores__icono" onclick="eliminarDesarrollador(this)">
+    let name = multicampos.querySelector(".mensaje__combobox-input").getAttribute("name");
+
+    let campo = `
+        <div class="multicampos__campo">
+            <div class="mensaje__combobox">
+                <div class="mensaje__input mensaje__combobox-contenedor" >
+                    <input type="text" class="mensaje__combobox-input buscador" placeholder="Escribe ..." name="${name}">
+                </div>
+            </div>
+            <div class="multicampos__icono" onclick="eliminarCampo(this)">
                 <i class="fa-solid fa-trash-can"></i>
             </div>
         </div>
     `;
 
-    desarrolladores.insertAdjacentHTML('beforeend', desarrollador);
+    multicampos.insertAdjacentHTML('beforeend', campo);
 
 }
 
 
 // ! AGREGAR DESARROLLADOR Y BUSCADOR
 
-function añadirDesarrolladorBuscador(boton) {
-    const desarrolladores = boton.previousElementSibling;
+function añadirCampoYBuscador(boton) {
+    let multicampos = boton.previousElementSibling;
 
-    //let opciones = desarrolladores.querySelector(".mensaje__combobox-opciones").innerHTML;
+    let opciones = multicampos.querySelector(".mensaje__combobox-opciones");
 
-    const desarrollador = `
-        <div class="desarrolladores__desarrollador">
+    let name = multicampos.querySelector(".mensaje__combobox-input").getAttribute("name");
+
+    let campo = `
+        <div class="multicampos__campo">
             <div class="mensaje__combobox">
                 <div class="mensaje__input mensaje__combobox-contenedor" >
-                    <input type="text" class="mensaje__combobox-input buscador" placeholder="-- Selecciona --" name="desarrolladores[]">
+                    <input type="text" class="mensaje__combobox-input buscador" placeholder="-- Selecciona --" name="${name}">
                 </div>
                 <div class="mensaje__combobox-opciones">
-                    <div class="mensaje__combobox-opcion">Mauricio Soto Buenaño</div>
-                    <div class="mensaje__combobox-opcion">Carlos Santiago Guzman Vasquez</div>
-                    <div class="mensaje__combobox-opcion">Aaron Gabriel Pereda Saldaña</div>
-                    <div class="mensaje__combobox-opcion">Pedro Nicolas Suarez Vera</div>
-                    <div class="mensaje__combobox-opcion">Josué Edú Cordova Ypanaque</div>
+                    ${opciones.innerHTML}
                 </div>
             </div>
-            <div class="desarrolladores__icono" onclick="eliminarDesarrollador(this)">
+            <div class="multicampos__icono" onclick="eliminarCampo(this)">
                 <i class="fa-solid fa-trash-can"></i>
             </div>
         </div>
     `;
 
-    desarrolladores.insertAdjacentHTML('beforeend', desarrollador);
+    for (i=0; i<opciones.children.length; i++) {
+        opciones.children[i].style.display = "inline-block";
+    }
+
+    console.log(opciones)
+
+    multicampos.insertAdjacentHTML('beforeend', campo);
 
     abrirLosComboBox();
     cerrarLosComboBox();
