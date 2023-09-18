@@ -176,18 +176,23 @@
             <div class="mensaje__contenido">
                 <div class="mensaje__campo">
                     <label for="" class="mensaje__texto">RUC</label>
-                    <input class="mensaje__input" type="text">
+                    <div class="mensaje__validar">
+                        <input class="mensaje__input" type="text">
+                        <div class="validar" onclick="validarEmpresa(this)">
+                            <span>Validar</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="mensaje__campo">
                     <label for="" class="mensaje__texto">Razón Social</label>
-                    <input class="mensaje__input" type="text">
+                    <input class="mensaje__input mensaje__input-disabled" type="text" disabled>
                 </div>
 
                 <div class="mensaje__campo">
                     <label for="" class="mensaje__texto">Rubro</label>
                     <div class="mensaje__combobox">
-                        <div class="mensaje__input mensaje__combobox-contenedor" >
+                        <div class="mensaje__input mensaje__combobox-contenedor mensaje__combobox-disabled">
                             <input type="text" class="mensaje__combobox-input" placeholder="-- Selecciona --" readonly>
                             <i class="fa-solid fa-chevron-down mensaje__combobox-flecha"></i>
                         </div>
@@ -205,12 +210,12 @@
 
                 <div class="mensaje__campo">
                     <label for="" class="mensaje__texto">Dirección</label>
-                    <input class="mensaje__input" type="text">
+                    <input class="mensaje__input mensaje__input-disabled" type="text" disabled>
                 </div>
 
                 <div class="mensaje__campo">
                     <label for="" class="mensaje__texto">Correo</label>
-                    <input class="mensaje__input" type="text">
+                    <input class="mensaje__input mensaje__input-disabled" type="text" disabled>
                 </div>
 
                 <div class="mensaje__campo mensaje__campo-start">
@@ -220,8 +225,8 @@
                         <div class="multicampos">
                             <div class="multicampos__campo">
                                 <div class="mensaje__combobox">
-                                    <div class="mensaje__input mensaje__combobox-contenedor" >
-                                        <input type="text" class="mensaje__combobox-input buscador" placeholder="Escribe ..." name="telefonos[]">
+                                    <div class="mensaje__input" >
+                                        <input type="text" class="mensaje__combobox-input" placeholder="Escribe ..." name="telefonos[]">
                                     </div>
                                 </div>
                                 <div class="multicampos__icono" onclick="eliminarCampo(this)">

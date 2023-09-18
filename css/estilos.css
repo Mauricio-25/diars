@@ -895,6 +895,9 @@ a {
 
 
 
+
+
+
 /* ! --------------------------------------------------------------------------------------------------------------------------------------------
 !                                                               SECCION DATOS PERFIL
 ! --------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -996,4 +999,34 @@ a {
         width: 100%;
         justify-content: center;
     }
+}
+
+
+
+
+
+
+
+
+
+/*
+!
+*/
+
+
+.mensaje__validar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+}
+
+.validar {
+    background-color: var(--anaranjado);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0 15px;
+    cursor: pointer;
 }

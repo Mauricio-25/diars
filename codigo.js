@@ -192,14 +192,20 @@ function añadirLosBuscadores() {
             let lista = input.parentNode.nextElementSibling;
             //let encontrado = false;
             let texto = input.value.toUpperCase();
+
+            let contenido = [];
+            contenido = input.parentNode.nextElementSibling.querySelectorAll(".mensaje__combobox-opcion");
         
-            for (i=0; i<lista.children.length; i++){
-                if(lista.children[i].innerHTML.toUpperCase().includes(texto)) {
-                lista.children[i].style.display = "inline-block";
-                //encontrado = true;
-                } else {
-                lista.children[i].style.display = "none";
+            for (f=0; f<lista.children.length; f++){
+                for (j=0; j<contenido.length; j++){
+                    if(lista.children[f].innerHTML.toUpperCase().includes(texto) && !contenido[j].innerHTML.toUpperCase().includes(texto)) {
+                        lista.children[f].style.display = "inline-block";
+                        //encontrado = true;
+                    } else {
+                        lista.children[f].style.display = "none";
+                    }
                 }
+                
             }
             
             /*
@@ -296,3 +302,25 @@ function añadirCampoYBuscador(boton) {
 
 
 
+function validarEmpresa(boton) {
+    let contenido = boton.parentNode.parentNode.parentNode;
+
+    let validado = true; // el valor devuelto por la API
+
+    if (validado) {
+        let inputs = [];
+        inputs = contenido.querySelectorAll(".mensaje__input-disabled");
+
+        let combos = [];
+        combos = contenido.querySelectorAll(".mensaje__combobox-disabled");
+
+        for (i=0; i<inputs.length; i++) {
+            inputs[i].classList.remove("mensaje__input-disabled");
+            inputs[i].removeAttribute("disabled");
+        }
+
+        for (i=0; i<combos.length; i++) {
+            combos[i].classList.remove("mensaje__combobox-disabled");
+        }
+    }
+}
